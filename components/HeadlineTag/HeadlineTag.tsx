@@ -3,8 +3,8 @@ import { HeadlineTagProps } from './HeadlineTag.props';
 import Styles from './HeadlineTag.module.css';
 
 export const HeadlineTag = ({
-  tag,
   children,
+  tag,
 }: HeadlineTagProps): JSX.Element => {
   switch (tag) {
     case 'h1':
