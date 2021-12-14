@@ -9,6 +9,8 @@ import { Rating } from '../components/Rating/Rating';
 export default function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <>
       <HeadlineTag tag='h1'>{counter}</HeadlineTag>
@@ -40,7 +42,7 @@ export default function Home(): JSX.Element {
 
       <Tag color='primary'>Green</Tag>
 
-      <Rating rating={4} />
+      <Rating rating={rating} setRating={setRating} isEditable />
     </>
   );
 }
