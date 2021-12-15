@@ -4,16 +4,16 @@ import { Sidebar } from './Sidebar/Sidebar';
 import { LayoutProps } from './Layout.props';
 import { FunctionComponent } from 'react';
 
+import Styles from './Layout.module.css';
+
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <>
-      <Header />
-      <div>
-        <Sidebar />
-        <div>{children}</div>
-      </div>
-      <Footer />
-    </>
+    <div className={Styles.wrapper}>
+      <Header className={Styles.header} />
+      <Sidebar className={Styles.sidebar} />
+      <div className={Styles.body}>{children}</div>
+      <Footer className={Styles.footer} />
+    </div>
   );
 };
 
