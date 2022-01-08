@@ -5,6 +5,8 @@ import { HeadlineTag } from '../../components/HeadlineTag/HeadlineTag';
 import Styles from './TopPageComponent.module.css';
 import { Card } from '../../components/Card/Card';
 import { HhData } from '../../components/HhData/HhData';
+import { firstLevelMenu } from '../../helpers/helpers';
+import { TopLevelCategory } from '../../interfaces/page.interface';
 
 export const TopPageComponent = ({
   page,
@@ -36,7 +38,7 @@ export const TopPageComponent = ({
         )}
       </div>
 
-      <HhData {...page.hh} />
+      {firstCategory === TopLevelCategory.Courses && <HhData {...page.hh} />}
     </div>
   );
 };
