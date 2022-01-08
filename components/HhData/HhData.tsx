@@ -3,6 +3,7 @@ import { Card } from '../Card/Card';
 
 import RateIcon from './rate.svg';
 import Styles from './HhData.module.css';
+import { priceRu } from '../../helpers/helpers';
 
 export const HhData = ({
   count,
@@ -20,7 +21,7 @@ export const HhData = ({
       <Card className={Styles.salary}>
         <div>
           <div className={Styles.title}>Начальный</div>
-          <div className={Styles.salaryValue}>{juniorSalary}</div>
+          <div className={Styles.salaryValue}>{priceRu(juniorSalary)}</div>
           <div className={Styles.rate}>
             <RateIcon className={Styles.filled} />
             <RateIcon />
@@ -30,7 +31,7 @@ export const HhData = ({
 
         <div>
           <div className={Styles.title}>Средний</div>
-          <div className={Styles.salaryValue}>{middleSalary}</div>
+          <div className={Styles.salaryValue}>{priceRu(middleSalary)}</div>
           <div className={Styles.rate}>
             <RateIcon className={Styles.filled} />
             <RateIcon className={Styles.filled} />
@@ -40,7 +41,7 @@ export const HhData = ({
 
         <div>
           <div className={Styles.title}>Профессионал</div>
-          <div className={Styles.salaryValue}>{seniorSalary}</div>
+          <div className={Styles.salaryValue}>{priceRu(seniorSalary)}</div>
           <div className={Styles.rate}>
             <RateIcon className={Styles.filled} />
             <RateIcon className={Styles.filled} />
