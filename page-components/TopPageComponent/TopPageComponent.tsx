@@ -8,6 +8,7 @@ import { HhData } from '../../components/HhData/HhData';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { TopLevelCategory } from '../../interfaces/page.interface';
 import { Advantages } from '../../components/Advantages/Advantages';
+import { Paragraph } from '../../components/Paragraph/Paragraph';
 
 export const TopPageComponent = ({
   page,
@@ -42,12 +43,23 @@ export const TopPageComponent = ({
       {firstCategory === TopLevelCategory.Courses && page.hh && (
         <HhData {...page.hh} />
       )}
+
       {page.advantages && page.advantages.length > 0 && (
         <>
           <HeadlineTag tag='h2'>Преимущество</HeadlineTag>
           <Advantages advantages={page.advantages} />
         </>
       )}
+
+      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      <HeadlineTag tag='h2'>Получаемые навыки</HeadlineTag>
+
+      {page.tags &&
+        page.tags.map((t) => (
+          <Tag key={t} color='primary'>
+            {t}
+          </Tag>
+        ))}
     </div>
   );
 };
