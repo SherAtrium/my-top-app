@@ -7,6 +7,7 @@ import { Card } from '../../components/Card/Card';
 import { HhData } from '../../components/HhData/HhData';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import { Advantages } from '../../components/Advantages/Advantages';
 
 export const TopPageComponent = ({
   page,
@@ -38,7 +39,15 @@ export const TopPageComponent = ({
         )}
       </div>
 
-      {firstCategory === TopLevelCategory.Courses && <HhData {...page.hh} />}
+      {firstCategory === TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <HeadlineTag tag='h2'>Преимущество</HeadlineTag>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
     </div>
   );
 };
