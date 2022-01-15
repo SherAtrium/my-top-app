@@ -51,7 +51,15 @@ export const TopPageComponent = ({
         </>
       )}
 
-      {page.seoText && <Paragraph>{page.seoText}</Paragraph>}
+      {page.seoText && (
+        <div
+          className={Styles.seo}
+          dangerouslySetInnerHTML={{
+            __html: page.seoText,
+          }}
+        />
+      )}
+
       <HeadlineTag tag='h2'>Получаемые навыки</HeadlineTag>
 
       {page.tags &&
