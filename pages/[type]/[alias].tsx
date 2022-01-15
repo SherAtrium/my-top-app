@@ -9,7 +9,7 @@ import {
 import { ProductModel } from '../../interfaces/product.interface';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { firstLevelMenu } from '../../helpers/helpers';
-import { TopPageComponent } from '../../page-components';
+import { TopPageComponent } from '../../page-components/TopPageComponent/TopPageComponent';
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
   return (
