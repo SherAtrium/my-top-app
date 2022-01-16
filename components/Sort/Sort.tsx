@@ -4,7 +4,7 @@ import cn from 'classnames';
 import SortIcon from './sort.svg';
 import Styles from './Sort.module.css';
 
-export const Paragraph = ({
+export const Sort = ({
   sort,
   setSort,
   className,
