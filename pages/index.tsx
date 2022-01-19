@@ -9,6 +9,7 @@ import { Rating } from '../components/Rating/Rating';
 import { Paragraph } from '../components/Paragraph/Paragraph';
 import { HeadlineTag } from '../components/HeadlineTag/HeadlineTag';
 import { MenuItem } from '../interfaces/menu.interface';
+import { Input } from '../components/Input/Input';
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(4);
@@ -17,7 +18,6 @@ function Home({ menu }: HomeProps): JSX.Element {
   return (
     <>
       <HeadlineTag tag='h1'>{counter}</HeadlineTag>
-
       <Button
         appearance='primary'
         arrow='right'
@@ -25,27 +25,22 @@ function Home({ menu }: HomeProps): JSX.Element {
       >
         Кнопка
       </Button>
-
       <Button appearance='ghost' arrow='right'>
         Кнопка
       </Button>
-
       <Paragraph size='l'>Большой</Paragraph>
       <Paragraph>Средний</Paragraph>
       <Paragraph size='s'>Маленький</Paragraph>
       <Tag size='s'>Ghost</Tag>
-
       <Tag size='m' color='red'>
         Red
       </Tag>
-
       <Tag size='s' color='green'>
         Green
       </Tag>
-
       <Tag color='primary'>Green</Tag>
-
       <Rating rating={rating} setRating={setRating} isEditable />
+      <Input placeholder='test' />
     </>
   );
 }
