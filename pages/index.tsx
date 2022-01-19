@@ -10,6 +10,7 @@ import { Paragraph } from '../components/Paragraph/Paragraph';
 import { HeadlineTag } from '../components/HeadlineTag/HeadlineTag';
 import { MenuItem } from '../interfaces/menu.interface';
 import { Input } from '../components/Input/Input';
+import { Textarea } from '../components/Textarea/Textarea';
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState<number>(4);
@@ -41,6 +42,7 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Tag color='primary'>Green</Tag>
       <Rating rating={rating} setRating={setRating} isEditable />
       <Input placeholder='test' />
+      <Textarea placeholder='area' />
     </>
   );
 }
