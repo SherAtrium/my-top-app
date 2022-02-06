@@ -17,6 +17,7 @@ export interface ProductModel {
   categories: string[];
   tags: string[];
   title: string;
+  image: string,
   link: string;
   price: number;
   credit: number;
@@ -32,4 +33,4 @@ export interface ProductModel {
   reviewAvg?: number;
   advantages: string;
 
- }
+}

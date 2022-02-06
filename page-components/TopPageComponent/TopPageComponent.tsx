@@ -5,11 +5,12 @@ import { TopPageComponentProps } from './TopPageComponent.props';
 import { TopLevelCategory } from '../../interfaces/page.interface';
 import { Advantages } from '../../components/Advantages/Advantages';
 import { HeadlineTag } from '../../components/HeadlineTag/HeadlineTag';
+import { sortReducer } from './sort.reducer';
 
 import Styles from './TopPageComponent.module.css';
 import { SortEnum } from '../../components/Sort/Sort.props';
-import { sortReducer } from './Sort.reducer';
 import { useReducer } from 'react';
+import { Product } from '../../components/Product/Product';
 
 export const TopPageComponent = ({
   page,
@@ -40,7 +41,7 @@ export const TopPageComponent = ({
 
       <div>
         {sortedProducts &&
-          sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
+          sortedProducts.map((p) => <Product key={p._id} product={p} />)}
       </div>
 
       <div className={Styles.hhTitle}>
