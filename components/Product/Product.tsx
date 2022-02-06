@@ -12,9 +12,12 @@ export const Product = ({
   ...props
 }: ProductProps): JSX.Element => {
   return (
-    <Card>
+    <Card className={Styles.product}>
       <div className={Styles.logo}>
-        <img src={product.image} alt={product.title} />
+        <img
+          src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
+          alt={product.title}
+        />
       </div>
       <div className={Styles.title}>{product.title}</div>
       <div className={Styles.price}>{product.price}</div>
@@ -29,6 +32,9 @@ export const Product = ({
           </Tag>
         ))}
       </div>
+      <div className={Styles.priceTitle}>цена</div>
+      <div className={Styles.creditTitle}>кредит</div>
+      <div className={Styles.rateTitle}>{product.reviewCount} отзывов</div>
     </Card>
   );
 };
