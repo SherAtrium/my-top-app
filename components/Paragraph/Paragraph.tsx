@@ -9,14 +9,7 @@ export const Paragraph = ({
   ...props
 }: ParagraphProps): JSX.Element => {
   return (
-    <p
-      className={cn(Styles.p, className, {
-        [Styles.s]: size === 's',
-        [Styles.m]: size === 'm',
-        [Styles.l]: size === 'l',
-      })}
-      {...props}
-    >
+    <p className={cn(Styles.p, className, Styles[size])} {...props}>
       {children}
     </p>
   );
