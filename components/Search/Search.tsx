@@ -20,7 +20,8 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
       },
     });
 
-  const handleKeyDown = (e: KeyboardEvent) => e.key === 'Enter' && goToSearch();
+  const handleKeyDown = (e: { key: string }) =>
+    e.key === 'Enter' && goToSearch();
 
   return (
     <div className={cn(className, Styles.search)} {...props}>

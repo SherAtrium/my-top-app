@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({
       };
     }
 
-    const { data: page } = await axios.get<TopPageModel[]>(
+    const { data: page } = await axios.get<TopPageModel>(
       `${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/byAlias/${params.alias}`
     );
 
