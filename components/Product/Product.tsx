@@ -1,10 +1,10 @@
 import { ProductProps } from './Product.props';
+import { Tag } from '../Tag/Tag';
 import { Card } from '../Card/Card';
-import cn from 'classnames';
+import { Rating } from '../Rating/Rating';
 
 import Styles from './Product.module.css';
-import { Rating } from '../Rating/Rating';
-import { Tag } from '../Tag/Tag';
+import { Button } from '../Button/Button';
 
 export const Product = ({
   product,
@@ -35,6 +35,30 @@ export const Product = ({
       <div className={Styles.priceTitle}>цена</div>
       <div className={Styles.creditTitle}>кредит</div>
       <div className={Styles.rateTitle}>{product.reviewCount} отзывов</div>
+      <div className={Styles.hr}>
+        <hr />
+      </div>
+      <div className={Styles.description}>{product.description}</div>
+      <div className={Styles.feature}>фичи</div>
+      <div className={Styles.advBlock}>
+        <div className={Styles.advantages}>
+          <div>Преимущество</div>
+          <div>{product.advantages}</div>
+        </div>
+        <div className={Styles.disAdvantages}>
+          <div>Недостатки</div>
+          <div>{product.disAdvantages}</div>
+        </div>
+      </div>
+      <div className={Styles.hr}>
+        <hr />
+      </div>
+      <div className={Styles.actions}>
+        <Button appearance='primary'>Узнать подробнее</Button>
+        <Button appearance='ghost' arrow='right'>
+          Читать отзывы
+        </Button>
+      </div>
     </Card>
   );
 };

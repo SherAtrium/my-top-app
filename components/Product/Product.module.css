@@ -12,6 +12,7 @@
     [rateStart] auto
     [end];
   margin-bottom: 30px;
+  padding: 30px;
 }
 
 .logo {
@@ -36,5 +37,19 @@
 
 .rating,
 .rateTitle {
-  grid-column: ratingStart / end;
+  grid-column: rateStart / end;
+}
+
+.hr,
+.description,
+.actions {
+  grid-column: start / end;
+}
+
+.feature {
+  grid-column: start / middle;
+}
+
+.advBlock {
+  grid-template-columns: middle / end;
 }
